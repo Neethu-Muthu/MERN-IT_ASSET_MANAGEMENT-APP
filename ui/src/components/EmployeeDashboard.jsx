@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const EmployeeDashboard = () => {
     const [assignedAssets, setAssignedAssets] = useState([]);
+    const [username, setUsername] = useState([]);
     const [user, setUser] = useState(null); // Assume you have a way to get logged-in user details
     const navigate = useNavigate();
 
@@ -18,6 +19,27 @@ const EmployeeDashboard = () => {
                 }
             }
         };
+
+
+// const fetchUsername = async ()=>{
+//             try {
+//                 const res = await fetch('/api/username');
+//                 const data = await res.json()
+//                 setUsername(data)
+//                 console.log(data,"ghgh")
+//             }
+//             catch (error) {
+//                 console.log("error", error)
+//             }
+//         };
+//         fetchUsername()
+
+
+
+
+
+
+
 
         // Mock function to get user info (replace with actual logic)
         const getUser = async () => {

@@ -31,7 +31,11 @@ app.use("/", adminRoutes);
 app.use('/api/assignments', assignmentRoutes);
 
 
+app.get("/username", verifyToken, async (req, res)=>{
+   console.log(req.username)
+   res.json(req.username);
 
+})
 
 app.post('/users', async (req, res) => {
     try {
