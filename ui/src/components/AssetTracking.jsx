@@ -113,6 +113,15 @@ const AssignedAssets = () => {
     };
 
     return (
+       <div className="bg-gray-100">
+            <nav className="flex justify-between items-center p-4 bg-white shadow-md">
+                <div className="space-x-4">
+                    <a href="/admin-dashboard" className="text-blue-600 hover:text-gray-900">Home</a>
+                </div>
+                <div className="space-x-4">
+                    <a href="/" className="text-blue-600 hover:text-gray-900">Logout</a>
+                </div>
+            </nav>
         <div className="container mx-auto p-4 mt-40 p-6 bg-gray-100 rounded-lg shadow-md">
             <div className="text-2xl text-center font-bold mb-4">Assigned Assets</div>
             <button
@@ -243,6 +252,7 @@ const AssignedAssets = () => {
                     </tbody>
                 </table>
             </div>
+        </div>
         </div>
     );
 };

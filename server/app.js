@@ -10,6 +10,11 @@ const authRoute = require("./routes/auth");
 const adminRoutes = require("./routes/AdminUsers");
 const assignmentRoutes = require('./routes/assignmentRoutes');
 const AdminUser = require('./models/AdminUser');
+
+
+const Assignment = require('./models/Assignment');
+
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -39,6 +44,24 @@ app.post('/users', async (req, res) => {
         res.status(500).json({ error: 'Server error' });
     }
 });
+
+
+
+app.post('/assignments', async (req, res) => {
+    const { userId, assetId, assignmentDate, status } = req.body;
+    try {
+        const newAssignment = new Assignment({ userId, assetId, assignmentDate, status });
+        await newAssignment.save();
+        res.status(201).json(newAssignment);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+
+
+
+
 
 
 const PORT = 5001;
