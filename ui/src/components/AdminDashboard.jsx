@@ -5,6 +5,7 @@ import axios from 'axios';
 const AdminDashboard = () => {
     const [totalAssets, setTotalAssets] = useState(0);
     const [activeAssets, setActiveAssets] = useState(0);
+    // const [totalUsers, setTotalUsers] = useState(0);
     // const [maintenanceTasks, setMaintenanceTasks] = useState(0);
     // const [assetDistribution, setAssetDistribution] = useState(0);
 
@@ -26,6 +27,7 @@ const AdminDashboard = () => {
                 // Handle unexpected data format gracefully
                 setTotalAssets(0);
                 setActiveAssets(0);
+                // setTotalUsers(0);
                 // setMaintenanceTasks(0);
                 // setAssetDistribution(0);
             }
@@ -34,6 +36,7 @@ const AdminDashboard = () => {
             // Handle error gracefully
             setTotalAssets(0);
             setActiveAssets(0);
+            // setTotalUsers(0);
             // setMaintenanceTasks(0);
             // setAssetDistribution(0);
         }
@@ -63,8 +66,8 @@ const AdminDashboard = () => {
                     <p id="active-assets" className="text-3xl font-bold text-green-500">{activeAssets}</p>
                 </div>
                 {/* <div className="bg-white shadow-md rounded-md p-4 ml-10 gap-10">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Maintenance Tasks</h3>
-                    <p id="maintenance-tasks" className="text-3xl font-bold text-yellow-500">{maintenanceTasks}</p>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Total Users</h3>
+                    <p id="maintenance-tasks" className="text-3xl font-bold text-yellow-500">{totalUsers}</p>
                 </div> */}
                 {/* <div className="bg-white shadow-md rounded-md p-4 mr-2">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Asset Distribution</h3>

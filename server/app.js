@@ -8,7 +8,7 @@ const assetRoutes = require("./routes/assetRoutes");
 const authRoute = require("./routes/auth");
 // const MaintenanceRoutes = require("./routes/MaintenanceRoutes");
 const adminRoutes = require("./routes/AdminUsers");
-const assignmentsRouter = require('./routes/assignments');
+const assignmentRoutes = require('./routes/assignmentRoutes');
 const AdminUser = require('./models/AdminUser');
 app.use(express.json());
 app.use(cookieParser());
@@ -23,7 +23,8 @@ app.use("/", assetRoutes);
 app.use("/", authRoute);
 // app.use('/api/maintenance', MaintenanceRoutes);// Ensure this route is used
 app.use("/", adminRoutes);
-app.use("/api/assignments", assignmentsRouter);
+app.use('/api/assignments', assignmentRoutes);
+
 
 
 

@@ -23,9 +23,10 @@ import AddAssetFormPage from "./pages/AddAssetFormPage";
 import EditAssetPage from "./components/EditAsset";
 // import MaintenancePage from "./pages/MaintenancePage";
 // import AssetAssignment from "../../server/models/AssetAssignment ";
-import AssignedAssets from "./components/AssignedAssets";
+import AssignedAssets from "./components/AssetTracking";
 import AdminAssignAsset from "./components/AdminDashboard";
 import EditUserPage from "./pages/EditUserPage";
+import AssignedAssetPage from "./pages/AssignedAssetPage";
 // import AdminMaintenancePage from "./pages/AdminMaintenancePage";
 
 //import AddAssetPage from "./pages/AddAssetPage";
@@ -58,8 +59,8 @@ function App() {
                     <Route path="/edit-asset/:id" element={<EditAssetPage/>}/>
                     {/* <Route path="/maintenance" element={<AdminMaintenancePage/>}/> */}
                     {/* <Route path="/maintenance" element={<MaintenancePage/>}/> */}
-                     <Route path="/assigned-assets" element={<AssignedAssets />} />
-                    <Route path="/assign-assets" element={<AdminAssignAsset />} />
+                     <Route path="/assigned-assets" element={<AssignedAssetPage />} />
+                    {/* <Route path="/assign-assets" element={<AdminAssignAsset />} /> */}
                       <Route path="/edit-user/:id" element={<EditUserPage/>}/>
 
                     
