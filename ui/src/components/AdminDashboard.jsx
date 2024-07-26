@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AdminDashboard = () => {
     const [totalAssets, setTotalAssets] = useState(0);
-    const [activeAssets, setActiveAssets] = useState(0);
+    // const [activeAssets, setActiveAssets] = useState(0);
     // const [totalUsers, setTotalUsers] = useState(0);
     // const [maintenanceTasks, setMaintenanceTasks] = useState(0);
     // const [assetDistribution, setAssetDistribution] = useState(0);
@@ -26,7 +26,7 @@ const AdminDashboard = () => {
                 console.error('Unexpected response data:', assets);
                 // Handle unexpected data format gracefully
                 setTotalAssets(0);
-                setActiveAssets(0);
+                // setActiveAssets(0);
                 // setTotalUsers(0);
                 // setMaintenanceTasks(0);
                 // setAssetDistribution(0);
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
             console.error('Error fetching data:', error);
             // Handle error gracefully
             setTotalAssets(0);
-            setActiveAssets(0);
+            // setActiveAssets(0);
             // setTotalUsers(0);
             // setMaintenanceTasks(0);
             // setAssetDistribution(0);
@@ -56,15 +56,15 @@ const AdminDashboard = () => {
             <div className="max-w-7xl mx-auto py-6 px-4 md:px-6 lg:px-8">
                 <h1 className="text-center text-3xl font-bold text-gray-800 mb-6">Admin Dashboard</h1>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-20 ml-60">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-20 w-[1300px] h-40 ml-[600px]">
                 <div className="bg-white shadow-md rounded-md p-4">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Total Assets</h3>
                     <p id="total-assets" className="text-3xl font-bold text-blue-500">{totalAssets}</p>
                 </div>
-                <div className="bg-white shadow-md rounded-md p-4 ml-10 gap-10 ">
+                {/* <div className="bg-white shadow-md rounded-md p-4 ml-10 gap-10 ">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Active Assets</h3>
                     <p id="active-assets" className="text-3xl font-bold text-green-500">{activeAssets}</p>
-                </div>
+                </div> */}
                 {/* <div className="bg-white shadow-md rounded-md p-4 ml-10 gap-10">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Total Users</h3>
                     <p id="maintenance-tasks" className="text-3xl font-bold text-yellow-500">{totalUsers}</p>
