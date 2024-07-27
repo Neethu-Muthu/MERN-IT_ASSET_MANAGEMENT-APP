@@ -74,6 +74,7 @@ MONGODB_URI=mongodb:your database
   - favicon.ico
   - manifest.json
 
+
 ## API Endpoints
 ### Authentication
 - POST /api/auth/signup: Sign up a new user.
