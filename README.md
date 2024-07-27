@@ -5,30 +5,9 @@
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-  - [Admin](#admin)
-    - [Login](#login)
-    - [Manage Assets](#manage-assets)
-      - [Add New Assets](#add-new-assets)
-      - [Edit Assets](#edit-assets)
-      - [Delete Assets](#delete-assets)
-    - [Manage Users](#manage-users)
-      - [Create New Users](#create-new-users)
-      - [Edit Users](#edit-users)
-      - [Delete Users](#delete-users)
-    - [Assign Assets](#assign-assets)
-      - [Create Assignments](#create-assignments)
-      - [View Assignments](#view-assignments)
-      - [Edit Assignments](#edit-assignments)
-      - [Delete Assignments](#delete-assignments)
-  - [Employee](#employee)
-    - [Login](#login-1)
-    - [View Assigned Assets](#view-assigned-assets)
-    - [Profile Management](#profile-management)
+- [Usage](#usage)  
 - [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## About the Project
@@ -53,7 +32,7 @@ The IT Asset Management Application is designed to streamline the process of man
 ## Installation
 
 ### Clone the Repository
-```bash
+
 git clone [your-repo-url]
 cd it-asset-management
 
