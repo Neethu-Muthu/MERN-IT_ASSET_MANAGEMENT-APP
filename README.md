@@ -44,6 +44,7 @@ MONGODB_URI=mongodb:your database
 ### Run the Application
 
 ## Project Structure
+
 /src
   /components
     - AdminDashboard.jsx
@@ -73,6 +74,7 @@ MONGODB_URI=mongodb:your database
   - index.html
   - favicon.ico
   - manifest.json
+
 
 
 ## API Endpoints
