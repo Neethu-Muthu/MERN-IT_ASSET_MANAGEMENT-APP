@@ -22,6 +22,37 @@ The IT Asset Management Application is designed to streamline the process of man
 ### Employee
 - **View Assigned Assets**: Employees can view the assets assigned to them.
 - **Profile Management**: Employees can view and update their profile information.
+- ## Workflow
+
+### User Authentication
+
+- **Signup**
+  - Fill out and submit the signup form.
+  - On success, redirect to the Login Page; on failure, show an error.
+
+- **Login**
+  - Enter credentials and submit.
+  - On success, redirect to the appropriate Dashboard (Admin/Employee); on failure, show an error.
+
+### Dashboard
+
+- **Admin**
+  - **Manage Assets**: Add, edit, or delete assets.
+  - **Manage Users**: Create, edit, or delete users.
+  - **Assign Assets**: Create, view, edit, or delete asset assignments.
+
+- **Employee**
+  - **View Assigned Assets**: See all assets assigned to them.
+  - **Profile Management**: View and update their profile.
+
+### Overall Workflow
+
+1. **Authenticate**: Users sign up or log in.
+2. **Access Dashboard**: Redirected to Admin or Employee dashboard.
+3. **Perform Actions**:
+   - Admins manage assets, users, and assignments.
+   - Employees view assigned assets and manage profiles.
+
 
 ## Prerequisites
 - **Node.js** (version 14.x or later)
@@ -78,7 +109,7 @@ Add New Assets
 - Confirm the deletion.
 ### Employee
 #### Login
-N- avigate to the login page: /login
+- Navigate to the login page: /login
 - Enter employee credentials to access the employee dashboard.
 - View Assigned Assets
 - Access the employee dashboard.
