@@ -60,26 +60,7 @@ Add New Assets
 - Navigate to the asset inventory page.
 - Select the asset to delete.
 - Confirm the deletion.
-
-## API Endpoints
-### Authentication
-- POST /api/auth/signup: Sign up a new user.
-- POST /api/auth/login: Log in an existing user.
- ###Assets
-- GET /api/assets: Retrieve all assets.
-- POST /api/assets: Create a new asset.
-- PUT /api/assets/:id: Update an existing asset.
-- DELETE /api/assets/:id: Delete an asset.
-### Users
-- GET /api/users: Retrieve all users.
-- POST /api/users: Create a new user.
-- PUT /api/users/:id: Update an existing user.
-- DELETE /api/users/:id: Delete a user.
-### Assignments
-- GET /api/assignments: Retrieve all asset assignments.
-- POST /api/assignments: Create a new assignment.
-- PUT /api/assignments/:id: Update an existing assignment.
-- DELETE /api/assignments/:id: Delete an assignment.
+- 
 #### Assign Assets
 ##### Create Assignments
 - Go to the asset tracking page.
@@ -102,7 +83,25 @@ N- avigate to the login page: /login
 - View Assigned Assets
 - Access the employee dashboard.
 - View all assets assigned to the logged-in employee.
-
+## API Endpoints
+### Authentication
+- POST /api/auth/signup: Sign up a new user.
+- POST /api/auth/login: Log in an existing user.
+ ###Assets
+- GET /api/assets: Retrieve all assets.
+- POST /api/assets: Create a new asset.
+- PUT /api/assets/:id: Update an existing asset.
+- DELETE /api/assets/:id: Delete an asset.
+### Users
+- GET /api/users: Retrieve all users.
+- POST /api/users: Create a new user.
+- PUT /api/users/:id: Update an existing user.
+- DELETE /api/users/:id: Delete a user.
+### Assignments
+- GET /api/assignments: Retrieve all asset assignments.
+- POST /api/assignments: Create a new assignment.
+- PUT /api/assignments/:id: Update an existing assignment.
+- DELETE /api/assignments/:id: Delete an assignment.
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
