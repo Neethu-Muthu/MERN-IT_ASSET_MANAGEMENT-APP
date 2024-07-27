@@ -58,8 +58,8 @@ const AdminDashboard = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-20 w-[1300px] h-40 ml-[600px]">
                 <div className="bg-white shadow-md rounded-md p-4">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Total Assets</h3>
-                    <p id="total-assets" className="text-3xl font-bold text-blue-500">{totalAssets}</p>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2 ml-20">Total Assets</h3>
+                    <p id="total-assets" className="text-3xl font-bold text-blue-500 ml-28">{totalAssets}</p>
                 </div>
                 {/* <div className="bg-white shadow-md rounded-md p-4 ml-10 gap-10 ">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Active Assets</h3>
