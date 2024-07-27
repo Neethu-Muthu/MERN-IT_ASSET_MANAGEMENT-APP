@@ -75,6 +75,15 @@ router.get("/logout", (req, res) => {
   return res;
 });
 
+// router.get('/api/users/me', authenticateUser, async (req, res) => {
+//     try {
+//         const user = await User.findById(req.user._id); // Assuming user ID is in req.user
+//         res.json(user);
+//     } catch (error) {
+//         res.status(500).json({ message: 'Server error' });
+//     }
+// });
+
 // // routes/auth.js
 // router.get("/me", verifyToken, (req, res) => {
 //   res.json(req.user);

@@ -31,12 +31,6 @@ app.use("/", adminRoutes);
 app.use('/api/assignments', assignmentRoutes);
 
 
-app.get("/username", verifyToken, async (req, res)=>{
-   console.log(req.username)
-   res.json(req.username);
-
-})
-
 app.post('/users', async (req, res) => {
     try {
       console.log(req.body)
@@ -68,12 +62,12 @@ app.post('/assignments', async (req, res) => {
 
 
 
-const PORT = 5001;
+const PORT = 5002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-mongoose.connect("mongodb://localhost:27017/DataStore");
+mongoose.connect("mongodb://mongodb3:27017/DataStore");
 
 const database = mongoose.connection;
 

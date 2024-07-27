@@ -20,7 +20,7 @@ const SignupPage = () => {
 
     if (res.ok) {
       toast.success(`Signup success`);
-      navigate("/");
+      navigate("/login");
     } else {
       toast.error(`Please check the input data`);
       navigate("/sign-up");
