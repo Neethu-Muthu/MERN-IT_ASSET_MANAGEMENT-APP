@@ -6,7 +6,6 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)  
-- [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
 - [Contact](#contact)
 
@@ -42,40 +41,25 @@ cd it-asset-management
 Create a .env file in the root directory and add your MongoDB URI.
 MONGODB_URI=mongodb:your database
 ### Run the Application
-
-## Project Structure
-
-/src
-  /components
-    - AdminDashboard.jsx
-    - AssetTracking.jsx
-    - EditAsset.jsx
-  /layouts
-    - AuthLayout.jsx
-    - MainLayout.jsx
-  /pages
-    - Admin.jsx
-    - Asset.jsx
-    - AssignedAssetPage.jsx
-    - EditUserPage.jsx
-    - Employee.jsx
-    - HomePage.jsx
-    - LoginPage.jsx
-    - SignupPage.jsx
-    - UserManagementPage.jsx
-    - AddNewAssetPage.jsx
-    - AddAssetFormPage.jsx
-    - NewUser.jsx
-  - App.jsx
-  - index.js
-  - reportWebVitals.js
-  - setupTests.js
-/public
-  - index.html
-  - favicon.ico
-  - manifest.json
-
-
+## Usage
+### Admin
+#### Login
+-navigate to the login page: /login
+- Enter admin credentials to access the admin dashboard.
+#### Manage Assets
+Add New Assets
+- Go to the "Add New Asset" page.
+- Fill out the asset details form.
+- Submit the form to add a new asset.
+#### Edit Assets
+- Navigate to the asset inventory page.
+- Select the asset to edit.
+- Update the asset details.
+- Submit the form to save changes.
+#### Delete Assets
+- Navigate to the asset inventory page.
+- Select the asset to delete.
+- Confirm the deletion.
 
 ## API Endpoints
 ### Authentication
@@ -96,7 +80,29 @@ MONGODB_URI=mongodb:your database
 - POST /api/assignments: Create a new assignment.
 - PUT /api/assignments/:id: Update an existing assignment.
 - DELETE /api/assignments/:id: Delete an assignment.
-- 
+#### Assign Assets
+##### Create Assignments
+- Go to the asset tracking page.
+- Select a user and an asset to assign.
+- Set the assignment details.
+- Submit the form to create the assignment.
+##### View Assignments
+- Navigate to the asset tracking page to view all assignments.
+#### #Edit Assignments
+- Select an assignment to edit.
+- Update assignment details.
+- Submit the form to save changes.
+##### Delete Assignments
+- Select the assignment to delete.
+- Confirm the deletion.
+### Employee
+#### Login
+N- avigate to the login page: /login
+- Enter employee credentials to access the employee dashboard.
+- View Assigned Assets
+- Access the employee dashboard.
+- View all assets assigned to the logged-in employee.
+
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
