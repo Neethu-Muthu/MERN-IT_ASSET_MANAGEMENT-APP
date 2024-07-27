@@ -93,3 +93,23 @@ MONGODB_URI=mongodb:your database
 - POST /api/assignments: Create a new assignment.
 - PUT /api/assignments/:id: Update an existing assignment.
 - DELETE /api/assignments/:id: Delete an assignment.
+- 
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+Fork the Project.
+Create your Feature Branch (git checkout -b feature/AmazingFeature).
+Commit your Changes (git commit -m 'Add some AmazingFeature').
+Push to the Branch (git push origin feature/AmazingFeature).
+Open a Pull Request.
+
+- 
+## Contact
+
+Email- neethu.ceecs24@duk.ac.in
+
+Project Link:  https://github.com/Neethu-Muthu/MERN-IT_ASSET_MANAGEMENT-APP.git
+
+
+This `README.md` includes all necessary details about the project, including setup, usage, project structure, API endpoints, and contribution guidelines.
+
