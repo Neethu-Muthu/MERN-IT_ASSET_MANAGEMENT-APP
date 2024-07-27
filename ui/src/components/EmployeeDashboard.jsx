@@ -1,60 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 const EmployeeDashboard = () => {
-    const [assignedAssets, setAssignedAssets] = useState([]);
-    const [username, setUsername] = useState([]);
-    const [user, setUser] = useState(null); // Assume you have a way to get logged-in user details
-    const navigate = useNavigate();
+    const [assets, setAssets] = useState([]);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const fetchAssignedAssets = async () => {
-            if (user) {
-                try {
-                    const response = await axios.get(`/api/assigned-assets/${user.userId}`);
-                    setAssignedAssets(response.data);
-                } catch (error) {
-                    console.error('Error fetching assigned assets:', error);
-                }
+        fetchAssets();
+        fetchUserDetails();
+    }, []);
+
+    const fetchAssets = async () => {
+        try {
+            const response = await fetch('/api/assets'); // Replace with your API endpoint
+            if (response.ok) {
+                const data = await response.json();
+                setAssets(data); // Assuming response.data is an array of assets
+            } else {
+                console.error('Error fetching assets:', response.statusText);
             }
-        };
+        } catch (error) {
+            console.error('Error fetching assets:', error);
+        }
+    };
 
-
-// const fetchUsername = async ()=>{
-//             try {
-//                 const res = await fetch('/api/username');
-//                 const data = await res.json()
-//                 setUsername(data)
-//                 console.log(data,"ghgh")
-//             }
-//             catch (error) {
-//                 console.log("error", error)
-//             }
-//         };
-//         fetchUsername()
-
-
-
-
-
-
-
-
-        // Mock function to get user info (replace with actual logic)
-        const getUser = async () => {
-            // Example user object
-            const userInfo = { userId: '1', username: 'user1' };
-            setUser(userInfo);
-        };
-
-        getUser();
-        fetchAssignedAssets();
-    }, [user]);
+    const fetchUserDetails = async () => {
+        try {
+            const response = await fetch('/api/user/me'); // Replace with your API endpoint to fetch logged-in user details
+            if (response.ok) {
+                const data = await response.json();
+                setUser(data);
+            } else {
+                console.error('Error fetching user details:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error fetching user details:', error);
+        }
+    };
 
     return (
-        <div className="bg-white">
-         <nav className="flex justify-between items-center p-4 bg-white shadow-md">
+        <div className="bg-gray-100">
+            <nav className="flex justify-between items-center p-4 bg-white shadow-md">
                 <div className="space-x-4">
                     <a href="/" className="text-blue-600 hover:text-gray-900">Home</a>
                 </div>
@@ -62,48 +47,48 @@ const EmployeeDashboard = () => {
                     <a href="/login" className="text-blue-600 hover:text-gray-900">Logout</a>
                 </div>
             </nav>
-        <div className="container mx-auto p-4 mt-10 p-6 bg-gray-100 rounded-lg shadow-md">
-            
-            <div className="text-2xl text-center font-bold mb-4">Employee Dashboard</div>
-            {user ? (
-                <div>
-                    <div className="text-lg mb-4">
-                        Welcome, <span className="font-bold">{user.username}</span>!
+            <header className="bg-white shadow-lg p-4">
+                <div className="container mx-auto flex justify-between items-center">
+                    <h1 className="text-xl font-bold text-gray-800">Employee Dashboard</h1>
+                    <div className="flex items-center space-x-4">
+                        <img src="/src/images/download.png" alt="User Avatar" className="w-8 h-8 rounded-full" />
+                        <span className="text-gray-900">{user ? user.name : 'Loading...'}</span>
                     </div>
-                    <div className="text-lg mb-4">
-                        Here are the assets assigned to you:
-                    </div>
-                    <table className="w-full bg-gray-300 rounded-md overflow-hidden">
-                        <thead className="bg-blue-100">
-                            <tr>
-                                <th className="border px-4 py-2">Asset ID</th>
-                                <th className="border px-4 py-2">Asset Name</th>
-                                <th className="border px-4 py-2">Assignment Date</th>
-                                {/* <th className="border px-4 py-2">Status</th> */}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {assignedAssets.length > 0 ? (
-                                assignedAssets.map(asset => (
-                                    <tr key={asset._id}>
-                                        <td className="border px-4 py-2">{asset.assetId}</td>
-                                        <td className="border px-4 py-2">{asset.assetName}</td>
-                                        <td className="border px-4 py-2">{new Date(asset.assignmentDate).toLocaleDateString()}</td>
-                                        {/* <td className="border px-4 py-2">{asset.status}</td> */}
-                                    </tr>
-                                ))
-                            ) : (
-                                <tr>
-                                    <td colSpan="4" className="border px-4 py-2 text-center">No assets assigned</td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
                 </div>
-            ) : (
-                <div className="text-center text-gray-500">Loading...</div>
-            )}
-        </div>
+            </header>
+            <div className="container mx-auto py-6 mb-20">
+                <section className="bg-white shadow-md rounded-lg p-4 mb-20">
+                    <h2 className="text-lg font-semibold text-gray-800 mb-4">My Assets</h2>
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full border-collapse border border-gray-200">
+                            <thead>
+                                <tr className="bg-gray-100">
+                                    <th className="border border-gray-300 px-4 py-2">Asset Name</th>
+                                    <th className="border border-gray-300 px-4 py-2">Asset Type</th>
+                                    <th className="border border-gray-300 px-4 py-2">Model</th>
+                                    <th className="border border-gray-300 px-4 py-2">Serial Number</th>
+                                    <th className="border border-gray-300 px-4 py-2">Purchase Date</th>
+                                    <th className="border border-gray-300 px-4 py-2">Warranty</th>
+                                    <th className="border border-gray-300 px-4 py-2">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {assets.map(asset => (
+                                    <tr key={asset.id}>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.assetName}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.assetType}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.model}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.serialNumber}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.purchaseDate}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.warranty}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{asset.location}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 };
