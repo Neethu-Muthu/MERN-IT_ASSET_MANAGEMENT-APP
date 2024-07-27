@@ -69,5 +69,16 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+// Fetch assigned assets for the logged-in user
+// router.get('/assigned-assets', verifyToken, async (req, res) => {
+//     try {
+//         const userId = req.user.id; // Assuming the user ID is stored in req.user.id by the auth middleware
+//         const assignments = await Assignment.find({ userId });
+//         res.json(assignments);
+//     } catch (error) {
+//         console.error('Error fetching assigned assets:', error);
+//         res.status(500).json({ error: 'Error fetching assigned assets' });
+//     }
+// });
 
 module.exports = router;

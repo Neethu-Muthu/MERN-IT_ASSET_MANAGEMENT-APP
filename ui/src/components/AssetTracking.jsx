@@ -9,10 +9,10 @@ const AssignedAssets = () => {
     const [userId, setUserId] = useState('');
     const [assetId, setAssetId] = useState('');
     const [assignmentDate, setAssignmentDate] = useState('');
-    const [status, setStatus] = useState(''); // Add this line
+    // const [status, setStatus] = useState(''); // Add this line
     const [users, setUsers] = useState([]);
     const [assets, setAssets] = useState([]);
-    const [statuses, setStatuses] = useState(['Pending', 'In Progress', 'Completed']); // Example statuses
+    // const [statuses, setStatuses] = useState(['Pending', 'In Progress', 'Completed']); // Example statuses
 
     useEffect(() => {
         const fetchAssignedAssets = async () => {
@@ -65,7 +65,7 @@ const AssignedAssets = () => {
                 }
             } else {
                 // Create new assignment
-                const response = await axios.post('/api/assignments', { userId, assetId, assignmentDate, status }, {
+                const response = await axios.post('/api/assignments', { userId, assetId, assignmentDate }, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -81,7 +81,7 @@ const AssignedAssets = () => {
             setUserId('');
             setAssetId('');
             setAssignmentDate('');
-            setStatus(''); // Reset status
+            // setStatus(''); // Reset status
             setEditMode(false);
             setCurrentAssignment(null);
         } catch (error) {
@@ -95,7 +95,7 @@ const AssignedAssets = () => {
         setUserId(assignment.userId);
         setAssetId(assignment.assetId);
         setAssignmentDate(new Date(assignment.assignmentDate).toISOString().split('T')[0]);
-        setStatus(assignment.status); // Set the current status
+        // setStatus(assignment.status); // Set the current status
         setEditMode(true);
         setModalOpen(true);
     };
@@ -181,7 +181,7 @@ const AssignedAssets = () => {
                                     onChange={(e) => setAssignmentDate(e.target.value)}
                                 />
                             </div>
-                            <div className="mb-4">
+                            {/* <div className="mb-4">
                                 <label htmlFor="status" className="block text-sm font-medium text-gray-900">Status:</label>
                                 <select
                                     id="status"
@@ -194,7 +194,7 @@ const AssignedAssets = () => {
                                         <option key={status} value={status}>{status}</option>
                                     ))}
                                 </select>
-                            </div>
+                            </div> */}
                             <div className="flex gap-4">
                                 <button
                                     type="submit"
@@ -217,43 +217,27 @@ const AssignedAssets = () => {
 
             <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                        <tr>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User ID</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Asset ID</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assignment Date</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                        {assignedAssets.map((assignment) => (
-                            <tr key={assignment._id}>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{assignment.userId}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{assignment.assetId}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(assignment.assignmentDate).toLocaleDateString()}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{assignment.status}</td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button
-                                        onClick={() => handleEdit(assignment)}
-                                        className="text-blue-600 hover:text-blue-900 mr-2"
-                                    >
-                                        Edit
-                                    </button>
-                                    <button
-                                        onClick={() => handleDelete(assignment._id)}
-                                        className="text-red-600 hover:text-red-900"
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+    <thead className="bg-gray-50">
+        <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User ID</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Asset ID</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assignment Date</th>
+        </tr>
+    </thead>
+    <tbody className="bg-white divide-y divide-gray-200">
+        {assignedAssets.map((assignment) => (
+            <tr key={assignment._id}>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{assignment.userId}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{assignment.assetId}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(assignment.assignmentDate).toLocaleDateString()}</td>
+            </tr>
+        ))}
+    </tbody>
+</table>
+
             </div>
         </div>
-        </div>
+     </div>
     );
 };
 
