@@ -79,16 +79,33 @@ This application is particularly relevant for medium to large organizations with
 - **Node.js** (version 14.x or later)
 - **npm** (version 6.x or later)
 - **MongoDB** (version 4.x or later)
+- **Docker** installed on your machine
+- **Docker Compose** installed on your machine
 
 ## Installation
 
+ Getting Started
+
 ### Clone the Repository
 
+First, clone the repository from GitHub:
 git clone [[repo-url](https://github.com/Neethu-Muthu/MERN-IT_ASSET_MANAGEMENT-APP.git)]
 cd MERN-ITAM-APP
 
-### Install Dependencies
-   npm install
+### Next, use Docker Compose to build and run the containers:
+
+docker-compose up --build
+This command will build the Docker images and start the containers for the application and MongoDB database.Once the containers are running, you can access the application in your web browser at: 
+
+http://localhost:3001
+
+To stop the containers, press Ctrl+C in the terminal where docker-compose is running, then use:
+
+docker-compose down
+
+This will stop and remove the containers.
+
+
 
 
 ## Usage
