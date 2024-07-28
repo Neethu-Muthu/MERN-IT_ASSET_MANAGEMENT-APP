@@ -121,7 +121,7 @@ Add New Assets
 - Submit the form to create the assignment.
 ##### View Assignments
 - Navigate to the asset tracking page to view all assignments.
-#### #Edit Assignments
+#### Edit Assignments
 - Select an assignment to edit.
 - Update assignment details.
 - Submit the form to save changes.
