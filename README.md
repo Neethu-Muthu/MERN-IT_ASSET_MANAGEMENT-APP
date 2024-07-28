@@ -84,15 +84,13 @@ This application is particularly relevant for medium to large organizations with
 
 ### Clone the Repository
 
-git clone [your-repo-url]
-cd it-asset-management
+git clone [[repo-url](https://github.com/Neethu-Muthu/MERN-IT_ASSET_MANAGEMENT-APP.git)]
+cd MERN-ITAM-APP
 
 ### Install Dependencies
    npm install
-### Setup Environment Variables
-Create a .env file in the root directory and add your MongoDB URI.
-MONGODB_URI=mongodb:your database
-### Run the Application
+
+
 ## Usage
 ### Admin
 #### Login
